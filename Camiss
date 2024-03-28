@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seleção de Resolução</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: 20%;
+    background-repeat: repeat;
+    background-position: top;
+    transition: background-image 0.5s ease;
+  }
+  #resolutionSelect {
+    margin-bottom: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #resolutionSelect:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  #resolutionSelect option {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  #resolutionSelect option:hover {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
+
+<select id="resolutionSelect" onchange="changeResolution(this.value)">
+  <option value="144p">144p</option>
+  <option value="360p">360p</option>
+  <option value="720p">720p</option>
+  <option value="1080p">1080p</option>
+</select>
+
+<script>
+  function changeResolution(resolution) {
+    const backgrounds = {
+      '144p': 'https://img.freepik.com/vetores-premium/lua-de-pixel-art-e-estrelas-ilustracao-vetorial_38133-23.jpg',
+      '360p': 'https://preview.redd.it/d09a9odnvb021.png?width=1080&crop=smart&auto=webp&s=74c886a5253459454fdf0e9b1cee1d58246af612',
+      '720p': 'https://img.freepik.com/fotos-premium/uma-paisagem-urbana-com-lua-cheia-e-uma-paisagem-urbana-ao-fundo_662214-24483.jpg',
+      '1080p': 'https://i.ibb.co/YZ8k5VC/asdasdasd.jpg'
+    };
+    
+    document.body.style.backgroundImage = `url('${backgrounds[resolution]}')`;
+  }
+</script>
+
+</body>
+</html>
